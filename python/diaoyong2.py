@@ -1,0 +1,2 @@
+from diaoyong import Chinese
+

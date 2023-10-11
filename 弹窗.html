@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环弹窗演练</title>
+    <script>
+        function openNewWindow() {
+            var screenWidth = window.screen.width;
+            var screenHeight = window.screen.height;
+            var windowWidth = 660;
+            var windowHeight = 580;
+            var left = (screenWidth - windowWidth) / 2;
+            var top = (screenHeight - windowHeight) / 2;
+            var newWindow = window.open("", "_blank", "width=" + windowWidth + ", height=" + windowHeight + ", left=" + left + ", top=" + top);
+
+            var style = newWindow.document.createElement("style");
+            style.textContent = `
+                body {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                }
+                
+                 {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                }
+                
+                img {
+                    width: 200px;
+                    height: auto;
+                }
+            `;
+            newWindow.document.head.appendChild(style);
+
+            var h1 = document.createElement("h1");
+            h1.textContent = "2";
+            newWindow.document.body.appendChild(h1);
+
+            var p = document.createElement("p");
+            p.textContent = "欢迎你的点击";
+            newWindow.document.body.appendChild(p);
+
+            var image = document.createElement("img");
+            image.src = "李逍遥.png";
+            image.alt = "图片";
+            image.title = "李逍遥";
+            newWindow.document.body.appendChild(image)
+
+            var link = document.createElement("a");
+            link.href = "https://www.4399.com";
+            link.textContent = "链接";
+            newWindow.document.body.appendChild(link);
+
+            var link = document.createElement("a");
+            link.href = "https://www.baidu.com";
+            link.textContent = "查询技巧";
+            newWindow.document.body.appendChild(link);
+
+        }
+    </script>
+    <style>
+        button {
+            margin-left: 755px;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <i>
+        <h1 align="center">1</h1>
+    </i>
+    <button type="button" onclick="openNewWindow()" aligen="center">点击此处</button>
+    <img src="背景图.webp" alt="背景图片" weight="200" height="428px">
+</body>
+
+</html>
+
+
+<!--     <script>
+        function openNewWindow() {
+            for (var i =0; i<10;i++){
+                var screenWidth = window.screen.width;
+                var screenHeight = window.screen.height;
+                var windowWidth = 660;
+                var windowHeight = 580;
+                var left = (screenWidth - windowWidth) / 2;
+                var top = (screenHeight - windowHeight) / 2;
+                var newWindow = window.open("", "_blank", "width=" + windowWidth + ", height=" + windowHeight + ", left=" + left + ", top=" + top);
+            newWindow.document.write("<h1>新弹窗</h1>");
+            newWindow.document.write("<p>这是在当前弹窗中弹出的新弹窗。</p>");}
+        }
+        window.open()
+
+        增加了一个for循环，小于10，每次循环增加了一个窗口最后的window.open()额外打开了一个新窗口
+    </script> -->
